@@ -5,10 +5,11 @@ class Board:
         self.tiles = start
         if size is None:
             self.size = self.getSize()
-            if not self.isSolvable():
-                raise Exception("This puzzle combination is not solvable")
         else:
             self.size = size
+
+    def __lt__(self, other):
+        return None
 
     def getSize(self) -> int:
         size = len(self.tiles)
